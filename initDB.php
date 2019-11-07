@@ -19,16 +19,8 @@ try{
         $query = "select * from project1 where username='$username' AND password='$password'";
         echo "<br>Connected";
         $stmt = $db->prepare($query);
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-    //  $stmt->bindParam('username', $username, PDO::PARAM_STR);
-        //  $stmt->bindParam('password', $password, PDO::PARAM_STR);
-        //  $stmt->execute();
-    //  $results = $stmt-> fetchColumn();
-    //  if ($r==true){
-            
-    //  }
-    $stmt->execute(array(":username"=> $username,":password"=>$password));      
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute(array(":username"=> $username,":password"=>$password));      
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if(($results['username'] == $username) && ($results['password'] == $password)){
         $response = "<br>Successfully logged in";}
@@ -43,6 +35,7 @@ try{
             $response = "The username or password field is empty";
     }
     echo $response;
+    
 }
     catch(Exception $e){
         echo $e->getMessage();
