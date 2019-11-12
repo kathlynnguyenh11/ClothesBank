@@ -29,42 +29,28 @@
             //print_r($stmt->errorInfo());
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
             //echo var_export($results, true);
-			if($results && count($results) > 0){
+	    if($results && count($results) > 0){
                 //$hash = password_hash($pass, PASSWORD_BCRYPT);
                 if(password_verify($pass, $results['password'])){
                     echo "Welcome, " . $results["username"];
-					echo "[" . $results["id"] . "]";
-			    	$user = array("id"=> $results['id'],
-			    				"name"=> $results['username']);
-					$_SESSION['user'] = $user;
-					echo var_export($user, true);
-					echo var_export($_SESSION, true);
-					header("Location: samplelandingpage.php");
-				}
-				else{
-                    echo "Invalid password";
-                }
-                echo "Welcome, " . $results["username"];
-				echo "[" . $results["id"] . "]";
-				$user = array("id"=> $results['id'],
-		    				"name"=> $results['username']
-							);
-				$_SESSION['user'] = $user;
-                echo var_export($user, true);
-                echo var_export($_SESSION, true);
-				header("Location: samplelandingpage.php");
-					
-				}
-				else{
-					echo "Invalid password";
-                }
-            
-			    else{
-					echo "Invalid username";
-			    }
-            }
-            catch(Exception $e){
-                echo $e->getMessage();
-            }
+		    echo "[" . $results["id"] . "]";
+		    $user = array("id"=> $results['id'],
+    				"name"=> $results['username']);
+		    $_SESSION['user'] = $user;
+		    echo var_export($user, true);
+		    echo var_export($_SESSION, true);
+					//header("Location: samplelandingpage.php");
+	    	}
+            	else{
+            		echo "Invalid password";
+            	}
+            	
+	   else{
+		echo "Invalid username";
+	    }
+       }
+       catch(Exception $e){
+       		echo $e->getMessage();
+       }
     }
 ?>
