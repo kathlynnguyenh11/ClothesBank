@@ -1,5 +1,5 @@
 <?php
-    session.start();
+    session_start();
     ini_set('display_errors',1);
     ini_set('display_startup_errors',1);
     error_reporting(E_ALL);
@@ -15,7 +15,7 @@
     </body>
 </html>
 
-<?php>
+<?php
     if(isset($_POST['username']) && isset($_POST['password'])){
         $user = $_POST["username"];
         $pass = $_POST["password"];
@@ -29,11 +29,11 @@
             $stmt->execute(array(":username"=>$user));
             //print_r($stmt->errorInfo());
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            //echo var_export($results, true);
+            echo var_export($results, true);
 	    if($results && count($results) > 0){
-                //$hash = password_hash($pass, PASSWORD_BCRYPT);
+                $hash = password_hash($pass, PASSWORD_BCRYPT);
                 if(password_verify($pass, $results['password'])){
-                    echo "Welcome, " . $results["username"];
+		    echo "Welcome, " . $results["username"];
 		    echo "[" . $results["id"] . "]";
 		    $user = array("id"=> $results['id'],
     				"name"=> $results['username']);
@@ -54,5 +54,6 @@
        catch(Exception $e){
        		echo $e->getMessage();
        }
+	//}
     }
 ?>
