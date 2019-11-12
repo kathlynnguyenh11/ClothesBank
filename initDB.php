@@ -24,7 +24,7 @@
             require("config.php");
             $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
             $db = new PDO($conn_string,$username,$password);
-            $stmt = $db->prepare("select id, username, password from `Users` where username = :username LIMIT 1");
+            $stmt = $db->prepare("select id, username, password from `project1` where username = :username LIMIT 1");
             $stmt->execute(array(":username"=>$user));
             //print_r($stmt->errorInfo());
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
