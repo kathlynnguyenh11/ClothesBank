@@ -1,7 +1,7 @@
 <?php
 function get_username(){
-	if(isset($_SESSION['user'])){
-		echo $_SESSION['user'];
+	if(isset($_SESSION['id']['name'])){
+		echo $_SESSION['id']['name'];
 	}
 	else{
 		echo "[Session missing 111]";
