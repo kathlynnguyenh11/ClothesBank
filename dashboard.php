@@ -13,13 +13,12 @@
 	include_once("func/func.php");
 ?>
 
-<section> Welcome, <?php get_username(); get_firstname?>.</section>
-<section>
-<header>Items Due Soon</header>
-<p>Item one</p>
-<p>Item two</p>
-<p>Item three</p>
-<p>...</p>
-</section>
+<section> Welcome, <?php get_username();?>.</section>
+<header>
+	<nav>
+		<a href="?page=profile.php">See Profile</a>
+		<a href="?page=logout.php">Log out</a>
+	</nav>
+</header>
 </body>
 </html>
