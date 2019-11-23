@@ -7,12 +7,12 @@
 </head>
 <body>
 <?php
-echo "<strong>Hi " . $_SESSION['user'] . ", welcome back!</strong>";
+//echo "<strong>Hi " . $_SESSION['user'] . ", welcome back!</strong>";
 //include_once("partials/header.php");
-//include_once("helpers/functions.php");
+include_once("func/function.php");
 ?>
 
-<section></section>
+<section> Welcome, <?php get_username();?>.</section>
 <section>
 <header>Items Due Soon</header>
 <p>Item one</p>
