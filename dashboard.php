@@ -21,5 +21,6 @@
 		<a href="logout.php">Log out</a>
 	</nav>
 </header>
+<p align="center" class="style1">Login successfully </p>
 </body>
 </html>
