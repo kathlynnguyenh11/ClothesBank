@@ -7,7 +7,9 @@ echo $user;
 require("config.php");
 $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 $db = new PDO($conn_string, $username, $password);
-$stmt = $db->prepare("select * from project where username = '$user' ");
+$stmt = $db->prepare("select * from project where username = :username");
+$stmt->execute(array(":username"=>$user));
+
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if($row && count($row) > 0){
 { 
