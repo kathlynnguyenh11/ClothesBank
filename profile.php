@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("func/func.php");
-echo "Welcome," get_username();
+
 $user=$_SESSION['user'];
 $result = mysql_query("SELECT * FROM project where username='$user'");
 while($row = mysql_fetch_array($result))
@@ -13,6 +13,9 @@ $email=$row['email'];
 $zip=$row['zip'];
 }
 ?>
+<html>
+<section> Welcome, <?php get_username();?>.</section>
+<body>
 <table width="398" border="0" align="center" cellpadding="0">
   <tr>
     <td height="26" colspan="2">Your Profile Information </td>
@@ -35,4 +38,6 @@ $zip=$row['zip'];
     <td valign="top"><?php echo $contact ?></td>
   </tr>
 </table>
+</body>
+</html>
 //<p align="center"><a href="index.php"></a></p>
