@@ -1,4 +1,5 @@
 <?php
+session_start();
 $user=$_SESSION['user'];
 $result = mysql_query("SELECT * FROM project where username='$user'");
 while($row = mysql_fetch_array($result))
