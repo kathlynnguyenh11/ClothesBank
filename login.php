@@ -38,6 +38,8 @@
 		    $user = array("id"=> $results['id'],
     				"name"=> $results['username']);
 		    $_SESSION['user'] = $user;
+			$_SESSION['firstname'] = $firstname ;
+
 		    echo var_export($user, true);
 		    echo var_export($_SESSION, true);
 			header("Location: dashboard.php");
