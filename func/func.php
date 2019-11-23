@@ -4,7 +4,7 @@ function get_username(){
 		echo $_SESSION['user']['name'];
 	}
 	else{
-		echo "[Session missing]";
+		echo "[Session missing 111]";
 	}
 }
 ?>
