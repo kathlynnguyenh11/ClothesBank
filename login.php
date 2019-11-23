@@ -35,8 +35,9 @@
                 if(password_verify($pass, $results['password'])){
 		    echo "Welcome, " . $results["username"];
 		    echo "[" . $results["id"] . "]";
-		    $user = array("id"=> $results['id'],
-    				"name"=> $results['username']);
+		   // $user = array("id"=> $results['id'],
+    		//		"name"=> $results['username']);
+
 		    $_SESSION['user'] = $user;
 			//$_SESSION['firstname'] = $results["firstname"] ;
 
