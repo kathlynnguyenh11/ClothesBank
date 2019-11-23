@@ -4,8 +4,12 @@ include_once("func/func.php");
 $user = $_SESSION['username'];
 echo $user;
 //$user=get_username();
-$result = mysql_query("SELECT * FROM project where username='$user'");
-while($row = mysql_fetch_array($result))
+require("config.php");
+$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+$db = new PDO($conn_string, $username, $password);
+$stmt = $db->prepare("select * from project where username = '$user' ");
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+if($row && count($row) > 0){
 { 
 $fname=$row['firstname'];
 $lname=$row['lastname'];
