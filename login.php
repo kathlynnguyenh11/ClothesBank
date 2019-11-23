@@ -39,6 +39,7 @@
     				"name"=> $results['username']);
 
 		    $_SESSION['user'] = $user;
+			$_SESSION['username']=$results['username'];
 			//$_SESSION['firstname'] = $results["firstname"] ;
 
 		    echo var_export($user, true);
