@@ -74,6 +74,7 @@ function checkPasswords(form){
 			print_r($stmt->errorInfo());
 			
 			echo var_export($result, true);
+			echo "Successfully registered. <a href='login.php'>Please login</a>.";
 		}
 		catch(Exception $e){
 			echo $e->getMessage();
