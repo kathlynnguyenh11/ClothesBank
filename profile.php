@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("func/func.php");
-echo "Welcome, get_username()";
+echo "Welcome," get_username();
 $user=$_SESSION['user'];
 $result = mysql_query("SELECT * FROM project where username='$user'");
 while($row = mysql_fetch_array($result))
