@@ -9,7 +9,7 @@
 <?php
 //echo "<strong>Hi " . $_SESSION['user'] . ", welcome back!</strong>";
 //include_once("partials/header.php");
-include_once("func/function.php");
+include_once("func/func.php");
 ?>
 
 <section> Welcome, <?php get_username();?>.</section>
