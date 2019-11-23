@@ -3,7 +3,7 @@ session_start();
 include_once("func/func.php");
 $user = $_SESSION['username'];
 echo $user;
-$user=get_username();
+//$user=get_username();
 $result = mysql_query("SELECT * FROM project where username='$user'");
 while($row = mysql_fetch_array($result))
 { 
