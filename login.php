@@ -37,12 +37,12 @@
 		    echo "[" . $results["id"] . "]";
 		    $user = array("id"=> $results['id'],
     				"name"=> $results['username']);
-		    //$_SESSION['user'] = $user;
+		    $_SESSION['user'] = $user;
 			//$_SESSION['firstname'] = $results["firstname"] ;
 
 		    echo var_export($user, true);
 		    echo var_export($_SESSION, true);
-			//header("Location: dashboard.php");
+			header("Location: dashboard.php");
 	    	}
             	else{
             		echo "Invalid password";
