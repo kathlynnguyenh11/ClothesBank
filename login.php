@@ -25,7 +25,7 @@
             require("config.php");
             $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
             $db = new PDO($conn_string,$username,$password);
-            $stmt = $db->prepare("select id, username, password from `project` where username = :username LIMIT 1");
+            $stmt = $db->prepare("select id, username, password, firstname from `project` where username = :username LIMIT 1");
             $stmt->execute(array(":username"=>$user));
             //print_r($stmt->errorInfo());
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,7 +38,7 @@
 		    $user = array("id"=> $results['id'],
     				"name"=> $results['username']);
 		    $_SESSION['user'] = $user;
-			$_SESSION['firstname'] = $firstname ;
+			$_SESSION['firstname'] = $results["firstname"] ;
 
 		    echo var_export($user, true);
 		    echo var_export($_SESSION, true);
