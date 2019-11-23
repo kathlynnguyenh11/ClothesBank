@@ -13,7 +13,7 @@
 	include_once("func/func.php");
 ?>
 
-<section> Welcome, <?php get_username();?>.</section>
+<section> Welcome, <?php get_username(); get_firstname?>.</section>
 <section>
 <header>Items Due Soon</header>
 <p>Item one</p>
