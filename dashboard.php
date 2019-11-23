@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-echo "<strong>Hi " . $_SESSION['firstname'] . ", welcome back!</strong>";
+echo "<strong>Hi " . $_SESSION['user'] . ", welcome back!</strong>";
 //include_once("partials/header.php");
 //include_once("helpers/functions.php");
 ?>
