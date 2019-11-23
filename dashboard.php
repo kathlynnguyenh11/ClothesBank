@@ -16,8 +16,8 @@
 <section> Welcome, <?php get_username();?>.</section>
 <header>
 	<nav>
-		<a href="?page=profile.php">See Profile</a>
-		<a href="?page=logout.php">Log out</a>
+		<a href="profile.php">See Profile</a>
+		<a href="logout.php">Log out</a>
 	</nav>
 </header>
 </body>
