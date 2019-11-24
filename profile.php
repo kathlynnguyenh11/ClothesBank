@@ -1,16 +1,23 @@
 <?php
 session_start();
+ini_set('display_errors',1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 include_once("func/func.php");
 $user = $_SESSION['username'];
 echo $user;
-//$user=get_username();
 require("config.php");
 $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 $db = new PDO($conn_string, $username, $password);
 $stmt = $db->prepare("select * from project where username = :username");
 $stmt->execute(array(":username"=>$user));
+print_r($stmt->errorInfo());
 
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+echo var_export($results, true);
+
 if($row && count($row) > 0){
 { 
 $fname=$row['firstname'];
