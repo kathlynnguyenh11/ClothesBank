@@ -26,7 +26,6 @@ error_reporting(E_ALL);
 		&& isset($_POST['donation'])
 		&& isset($_POST['condition'])){
 			
-		$user = $_SESSION['user']['name'];
 		$type = $_POST['type'];
 		$donation = $_POST['donation'];
 		$condition = $_POST['condition'];
@@ -38,7 +37,7 @@ error_reporting(E_ALL);
 			$stmt = $db->prepare("INSERT into `donation` (`username`, `type`,`donation`,`condition`,`date`) 
 			VALUES(:username, :type, :donation, :condition, CURDATE()");
 			$result = $stmt->execute(
-				array(":username"=>$user,
+				array(":username"=>$_SESSION['user']['name'],
 					":type"=>$type,
 					":donation" =>$donation,
 					":condition"=>$condition
