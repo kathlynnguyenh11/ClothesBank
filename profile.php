@@ -4,8 +4,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-/*$user = $_SESSION['user'];
-echo $user;*/
 include_once("func/func.php");
 
 
@@ -18,19 +16,19 @@ try{
 	print_r($stmt->errorInfo());
 
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
-	echo var_export($row, true);
+	//echo var_export($row, true);
 
 	if($row && count($row) > 0){ 
-$fname=$row['firstname'];
-$lname=$row['lastname'];
-$contact=$row['contact_number'];
-$email=$row['email'];
-$zip=$row['zip'];
-}
+		$fname=$row['firstname'];
+		$lname=$row['lastname'];
+		$contact=$row['contact_number'];
+		$email=$row['email'];
+		$zip=$row['zip'];
+	}
 }
 catch(Exception $e){
 			echo $e->getMessage();
-		}
+}
 
 ?>
 <html>
@@ -43,7 +41,11 @@ catch(Exception $e){
     <td height="26" colspan="2">Your Profile Information </td>
   </tr>
   <tr>
-    <td valign="top"><div align="left">LastName:</div></td>
+    <td valign="top"><div align="left">First Name:</div></td>
+    <td valign="top"><?php echo $fname ?></td>
+  </tr>
+  <tr>
+    <td valign="top"><div align="left">Last Name:</div></td>
     <td valign="top"><?php echo $lname ?></td>
   </tr>
   <tr>
