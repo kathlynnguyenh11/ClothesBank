@@ -9,18 +9,17 @@ include_once("func/func.php");
 $user = $_SESSION['username'];
 echo $user;
 try{
-require("config.php");
-$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-$db = new PDO($conn_string, $username, $password);
-$stmt = $db->prepare("select * from project where username = :username");
-$stmt->execute(array(":username"=>$user));
-print_r($stmt->errorInfo());
+	require("config.php");
+	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+	$db = new PDO($conn_string, $username, $password);
+	$stmt = $db->prepare("select * from project where username = :username");
+	$stmt->execute(array(":username"=>$user));
+	print_r($stmt->errorInfo());
 
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-echo var_export($results, true);
+	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	echo var_export($results, true);
 
-if($row && count($row) > 0){
-{ 
+	if($row && count($row) > 0){ 
 $fname=$row['firstname'];
 $lname=$row['lastname'];
 $contact=$row['contact_number'];
