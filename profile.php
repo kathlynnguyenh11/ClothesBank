@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 include_once("func/func.php");
 $user = $_SESSION['username'];
 echo $user;
-try{
+/*try{
 	require("config.php");
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	$db = new PDO($conn_string, $username, $password);
@@ -30,6 +30,7 @@ $zip=$row['zip'];
 catch(Exception $e){
 			echo $e->getMessage();
 		}
+*/
 ?>
 <html>
 <section> Welcome, <?php get_username();?>.</section>
