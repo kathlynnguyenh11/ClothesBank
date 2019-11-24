@@ -1,19 +1,19 @@
 <?php
 session_start();
-/*ini_set('display_errors',1);
+ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-*/
-$user = $_SESSION['user'];
+
+/*$user = $_SESSION['user'];
 echo $user;
 include_once("func/func.php");
-
-/*try{
+*/
+try{
 	require("config.php");
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	$db = new PDO($conn_string, $username, $password);
 	$stmt = $db->prepare("select * from project where username = :username");
-	$stmt->execute(array(":username"=>$user));
+	$stmt->execute(array(":username"=>get_username()));
 	print_r($stmt->errorInfo());
 
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
