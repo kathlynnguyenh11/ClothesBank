@@ -18,6 +18,7 @@
 	<nav>
 		<a href="profile.php">See Profile</a>
 		<a href="donate.php">Make Donation</a>
+		<a href="donationHistory.php">View donation history</a>
 		<a href="logout.php">Log out</a>
 	</nav>
 </header>
