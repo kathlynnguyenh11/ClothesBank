@@ -34,14 +34,13 @@ error_reporting(E_ALL);
 			require("config.php");
 			$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 			$db = new PDO($conn_string, $username, $password);
-			$stmt = $db->prepare("INSERT into `donation` (`username`, `type`,`donation`,`condition`,`date`) 
-			VALUES(:username, :type, :donation, :condition, :date ");
+			$stmt = $db->prepare("INSERT into `donation` (`username`, `type`,`donation`,`condition`) 
+			VALUES(:username, :type, :donation, :condition)");
 			$result = $stmt->execute(
 				array(":username"=>$_SESSION['user']['name'],
 					":type"=>$type,
 					":donation" =>$donation,
-                    ":condition"=>$condition,
-                    ":date"=>CURDATE()
+                    ":condition"=>$condition
 				)
 			);
 			print_r($stmt->errorInfo());
