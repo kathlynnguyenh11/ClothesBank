@@ -34,12 +34,13 @@ catch(Exception $e){
 
 ?>
 <html>
+
 <section> Welcome, <?php get_username();?>.</section>
 <body>
+
 <table width="398" border="0" align="center" cellpadding="0">
   <tr>
     <td height="26" colspan="2">Your Profile Information </td>
-	//<td><div align="right"><a href="index.php">logout</a></div></td>
   </tr>
   <tr>
     <td valign="top"><div align="left">LastName:</div></td>
@@ -60,4 +61,3 @@ catch(Exception $e){
 </table>
 </body>
 </html>
-//<p align="center"><a href="index.php"></a></p>
