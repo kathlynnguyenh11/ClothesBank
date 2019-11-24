@@ -13,7 +13,7 @@ try{
 	$db = new PDO($conn_string, $username, $password);
 	$stmt = $db->prepare("select * from project where username = :username");
 	$stmt->execute(array(":username"=>$_SESSION['user']['name']));
-	print_r($stmt->errorInfo());
+	//print_r($stmt->errorInfo());
 
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 	//echo var_export($row, true);
