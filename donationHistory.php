@@ -15,7 +15,8 @@ try{
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	//echo var_export($row, true);
 	    if($row && count($row) > 0){ 
-		    echo "Type: " . $row['type'] . " - Item: " . $row['donation'] . " - Condition: " . $row['condition']. " - Date: ".$row['date'];
+		    echo "Type: " . $row['type'] . " - Item: " . $row['donation'] . " - Condition: " . $row['condition']. " - Date: ".$row['date']. "\n";
+		    echo "<br>";
         }
     }  
 }
