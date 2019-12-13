@@ -8,20 +8,22 @@ error_reporting(E_ALL);
 <html>
 <head>
 <script>
+//	if(document.getElementById('type').value == "Food") {
+//		alert("Please make sure your food is not expiring in at least 3 months ");
+//	}
 </script>
 </head>
 <body>
     <p> Make donation: Food or Clothes </p>
 	<form method="POST">
 		Select food or clothe
-		<select name="type">
-			<option value="Food">Food</option>
-			<option value="Clothe">CLothe</option>
+		<select id="type" name="type">
+			<option value="Food" id="food">Food</option>
+			<option value="Clothe" >Clothe</option>
 		</select>
-		<input type="text" placeholder="Enter food or clothe" name="type"/>
 		<input type="text" placeholder="Enter the item" name="donation"/>
 		Select condition
-		<select name="condition">
+		<select id="condition" name="condition">
 			<option value="Excellent">Excellent</option>
 			<option value="Good">Good</option>
 			<option value="Fair">Fair</option>
@@ -33,6 +35,7 @@ error_reporting(E_ALL);
 </body>
 </html>
 <?php
+	
 	if(isset($_POST['type']) 
 		&& isset($_POST['donation'])
 		&& isset($_POST['condition'])){
@@ -54,9 +57,9 @@ error_reporting(E_ALL);
                     ":condition"=>$condition
 				)
 			);
-			print_r($stmt->errorInfo());
+			//print_r($stmt->errorInfo());
 			
-			echo var_export($result, true);
+			//echo var_export($result, true);
 			echo "Successfully added your donation info to the system. we'll let u know when someone needs anything";
 		}
 		catch(Exception $e){

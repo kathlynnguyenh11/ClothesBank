@@ -12,10 +12,11 @@ try{
 	$stmt = $db->prepare("select * from donation where username = :username");
 	$stmt->execute(array(":username"=>$_SESSION['user']['name']));
 	//print_r($stmt->errorInfo());
+	echo "<table><tr><th>Type</th><th>Item</th> <th>Condition</th><th>Date</th></tr>";
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 	//echo var_export($row, true);
 	    if($row && count($row) > 0){ 
-		    echo "Type: " . $row['type'] . " - Item: " . $row['donation'] . " - Condition: " . $row['condition']. " - Date: ".$row['date']. "\n";
+			echo "<tr><td> " . $row['type'] . "</td><td>" . $row['donation'] . "</td><td> " . $row['condition']. "</td><td> ".$row['date']. "</td></tr>";
 		    echo "<br>";
         }
     }  
@@ -26,7 +27,12 @@ catch(Exception $e){
 ?>
 <html>
 <section> Thank you for donating, <?php get_username();?>.</section>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 <body>
-    <p>Above is your history of donation</p>
+    <p>Below is your history of donation</p>
 </body>
 </html>
