@@ -20,6 +20,7 @@
 		<a href="donate.php">Make Donation</a>
 		<a href="donationHistory.php">View donation history</a>
 		<a href="logout.php">Log out</a>
+		<a href="getDonation.php">Go here if you are in need of something</a>
 	</nav>
 </header>
 <p align="center" class="style1">Login successfully </p>
