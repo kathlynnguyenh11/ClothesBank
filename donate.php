@@ -12,10 +12,21 @@ error_reporting(E_ALL);
 </head>
 <body>
     <p> Make donation: Food or Clothes </p>
-	<form method="POST"/>
+	<form method="POST">
+		Select food or clothe
+		<select name="type">
+			<option value="Food">Food</option>
+			<option value="Clothe">CLothe</option>
+		</select>
 		<input type="text" placeholder="Enter food or clothe" name="type"/>
 		<input type="text" placeholder="Enter the item" name="donation"/>
-		<input type="text" placeholder="Enter condition" name="condition"/>
+		Select condition
+		<select name="condition">
+			<option value="Excellent">Excellent</option>
+			<option value="Good">Good</option>
+			<option value="Fair">Fair</option>
+			<optionn value="Poor">Poor</option>
+		</select>
 		<input type="submit" value="donate"/>
         <p>Click submit button to donate</p>
 	</form>
