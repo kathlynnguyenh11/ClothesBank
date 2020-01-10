@@ -1,11 +1,10 @@
 <html>
- <script>    
- </script>
+    <link rel="stylesheet" href="styles.css">
 <body>
     <div>
     <form id="lookup" method="POST">
         Item:   <input type="text" name="item"/>
-                <input type="submit" value="Look up to see if someone has the item for donation"/>
+                <input class="button" type="submit" value="Look up to see if someone has the item for donation"/>
     </form>
     </div>
 </body>

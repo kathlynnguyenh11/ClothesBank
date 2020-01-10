@@ -7,14 +7,10 @@ error_reporting(E_ALL);
 
 <html>
 <head>
-<script>
-//	if(document.getElementById('type').value == "Food") {
-//		alert("Please make sure your food is not expiring in at least 3 months ");
-//	}
-</script>
+		<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p> Make donation: Food or Clothes </p>
+    <p class="donation"> Make donation: Food or Clothes </p>
 	<form method="POST">
 		Select food or clothe
 		<select id="type" name="type">
@@ -29,13 +25,13 @@ error_reporting(E_ALL);
 			<option value="Fair">Fair</option>
 			<optionn value="Poor">Poor</option>
 		</select>
-		<input type="submit" value="donate"/>
-        <p>Click submit button to donate</p>
+		<input type="submit" class="button" value="donate"/>
+        <p class="donation">Click submit button to donate</p>
 	</form>
 </body>
 </html>
+
 <?php
-	
 	if(isset($_POST['type']) 
 		&& isset($_POST['donation'])
 		&& isset($_POST['condition'])){

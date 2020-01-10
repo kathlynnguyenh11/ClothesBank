@@ -32,8 +32,8 @@ catch(Exception $e){
 
 ?>
 <html>
-
-<section> Welcome, <?php get_username();?>.</section>
+  <link rel="stylesheet" href="styles.css">
+<h1> Welcome, <?php get_username();?>.</h1>
 <body>
 
 <table width="398" border="0" align="center" cellpadding="0">

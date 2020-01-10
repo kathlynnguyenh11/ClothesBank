@@ -7,12 +7,4 @@ function get_username(){
 		echo "[Session missing 111]";
 	}
 }
-/*function get_firstname(){
-	if(isset($_SESSION['firstname'])){
-		echo $_SESSION['firstname'];
-	}
-	else{
-		echo "[Session missing 111]";
-	}
-}*/
 ?>

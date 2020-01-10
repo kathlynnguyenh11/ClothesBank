@@ -26,13 +26,14 @@ catch(Exception $e){
 }
 ?>
 <html>
-<section> Thank you for donating, <?php get_username();?>.</section>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-<body>
-    <p>Below is your history of donation</p>
-</body>
+	<h1> Thank you for donating, <?php get_username();?>.</h1>
+	<style>
+		table, th, td {
+		border: 1px solid black;}
+	</style>
+                <link rel="stylesheet" href="styles.css">
+	
+	<body>
+    	<p>Below is your history of donation</p>
+	</body>
 </html>

@@ -5,12 +5,15 @@
     error_reporting(E_ALL);
 ?>
 <html>
-    <head></head>
+    <head>
+        <h1>Login</h1>
+            <link rel="stylesheet" href="styles.css"/>
+    </head>
     <body>
-        <form method="POST"/>
+        <form method="POST">
         Username:    <input type="text" name="username"/>
         Password:    <input type="password" name="password"/>
-            <input type="submit" value="Login"/>
+                     <input class="button" type="submit" value="Login"/>
         </form>
     </body>
 </html>

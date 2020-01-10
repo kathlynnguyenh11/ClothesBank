@@ -12,9 +12,13 @@ function checkPasswords(form){
 	if(!isOk){ alert("Passwords don't match");}
 	return isOk;
 }
+
 </script>
+	<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
+	<h1>Register</h1>
 	<form method="POST" onsubmit="return checkPasswords(this);"/>
 		<input type="text" placeholder="Enter Username" name="username"/>
 		<input type="password" placeholder="Enter Password" name="password"/>
@@ -24,7 +28,7 @@ function checkPasswords(form){
 		<input type="text" placeholder="Enter last name" name="lastname"/>
 		<input type="text" placeholder="Enter phone number" name="phone"/>
 		<input type="text" placeholder="Enter zip code" name="zip"/>
-		<input type="submit" value="Register"/>
+		<input class="button" type="submit" value="Register"/>
 	</form>
 </body>
 </html>
@@ -71,7 +75,7 @@ function checkPasswords(form){
 
 				)
 			);
-			print_r($stmt->errorInfo());
+//			print_r($stmt->errorInfo());
 			
 			echo var_export($result, true);
 			echo "Successfully registered. <a href='login.php'>Please login</a>.";
